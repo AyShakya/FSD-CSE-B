@@ -20,4 +20,27 @@ function regiseter(){
     console.log('registered');  
 }
 
+function sendEmail(){
+    console.log('sending....');
+    const res = waitfor2seconds();
+    console.log(res);
+    console.log('sent');  
+}
+
 regiseter();
+sendEmail();
+
+function registernew(cb){
+    setTimeout(() => {
+        console.log('registering....');
+        cb();
+    }, 2000);
+}
+
+registernew(() => {
+    sendEmail(() => {
+        regiseter(() => {
+            console.log('all done');
+        })
+    });
+})
