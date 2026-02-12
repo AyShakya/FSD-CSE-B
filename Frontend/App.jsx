@@ -1,0 +1,10 @@
+console.log('HIi');
+const parent = document.getElementById('container');
+const root = ReactDOM.createRoot(parent);
+const h2 = React.createElement('h2', { style: 'color: blue' }, 'Hello from React!');
+const li1= React.createElement('li', null, 'Item 1');
+const li2= React.createElement('li', null, 'Item 2');
+const li3= React.createElement('li', null, 'Item 3');
+const ul = React.createElement('ul', null, [li1, li2, li3]);
+const div = React.createElement('div', null, [h2, ul]);
+root.render(div);
