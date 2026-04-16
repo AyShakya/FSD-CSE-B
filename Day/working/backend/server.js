@@ -77,6 +77,22 @@ app.post("/api/auth/login", async (req, res) => {
   }
 });
 
+app.get("/api/users", async (req, res) => {
+  try {
+    const users = await userModel
+      .find({}, { name: 1, email: 1, createdAt: 1 })
+      .sort({ createdAt: -1 })
+      .lean();
+
+    res.status(200).json({
+      message: "Users fetched successfully",
+      users,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
