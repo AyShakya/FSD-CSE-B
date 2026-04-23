@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 17, 17, 0.55) rgba(245, 240, 230, 0.6);
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgba(245, 240, 230, 0.6);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.55);
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 17, 17, 0.72);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #111111;
+  color: #1b1b1b;
+  transition: background 0.5s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Input and form element focus states */
+input:focus {
+  border-color: rgba(17, 17, 17, 0.58) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08) !important;
+}
+
+input::placeholder {
+  color: rgba(85, 80, 74, 0.65);
+}
+
+/* Button hover and active states */
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24) !important;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Link styles */
+a {
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #444444;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(17, 17, 17, 0.85);
+  color: #f8f2e8;
+}
+
+::-moz-selection {
+  background: rgba(17, 17, 17, 0.85);
+  color: #f8f2e8;
+}
