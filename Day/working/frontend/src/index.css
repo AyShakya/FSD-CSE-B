@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --cp-bg: #05070f;
+  --cp-cyan: #00ffe0;
+  --cp-pink: #ff2d95;
+  --cp-text: #dfe7ff;
+}
+
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(17, 17, 17, 0.55) rgba(245, 240, 230, 0.6);
+  scrollbar-color: rgba(0, 255, 224, 0.6) rgba(6, 10, 25, 0.88);
 }
 
 html::-webkit-scrollbar {
@@ -14,26 +21,26 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background: rgba(245, 240, 230, 0.6);
+  background: rgba(6, 10, 25, 0.88);
 }
 
 html::-webkit-scrollbar-thumb {
-  background: rgba(17, 17, 17, 0.55);
+  background: rgba(0, 255, 224, 0.6);
   border-radius: 4px;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background: rgba(17, 17, 17, 0.72);
+  background: rgba(255, 45, 149, 0.8);
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: "Rajdhani", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #111111;
-  color: #1b1b1b;
+  background: var(--cp-bg);
+  color: var(--cp-text);
   transition: background 0.5s ease;
 }
 
@@ -43,19 +50,18 @@ body {
 
 /* Input and form element focus states */
 input:focus {
-  border-color: rgba(17, 17, 17, 0.58) !important;
-  background: rgba(255, 255, 255, 0.94) !important;
-  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08) !important;
+  border-color: rgba(0, 255, 224, 0.9) !important;
+  background: rgba(8, 18, 49, 1) !important;
+  box-shadow: 0 0 0 3px rgba(0, 255, 224, 0.2) !important;
 }
 
 input::placeholder {
-  color: rgba(85, 80, 74, 0.65);
+  color: rgba(141, 165, 232, 0.75);
 }
 
-/* Button hover and active states */
 button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24) !important;
+  box-shadow: 0 8px 20px rgba(0, 255, 224, 0.25) !important;
 }
 
 button:active:not(:disabled) {
@@ -71,11 +77,11 @@ button:disabled {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -94,31 +100,31 @@ button:disabled {
   from {
     opacity: 0;
     transform: translateX(-20px);
+    filter: blur(2px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
+    filter: blur(0);
   }
 }
 
-/* Link styles */
 a {
-  color: #111111;
+  color: var(--cp-cyan);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #444444;
+  color: var(--cp-pink);
 }
 
-/* Selection color */
 ::selection {
-  background: rgba(17, 17, 17, 0.85);
-  color: #f8f2e8;
+  background: rgba(0, 255, 224, 0.24);
+  color: #f8fbff;
 }
 
 ::-moz-selection {
-  background: rgba(17, 17, 17, 0.85);
-  color: #f8f2e8;
+  background: rgba(0, 255, 224, 0.24);
+  color: #f8fbff;
 }

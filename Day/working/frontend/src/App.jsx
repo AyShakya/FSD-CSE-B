@@ -177,12 +177,12 @@ export default function App() {
         <div style={styles.backdrop} />
         <div style={styles.container}>
           {successMessage && (
-            <div style={{ ...styles.messageContainer, borderColor: "rgba(134, 239, 172, 0.3)", backgroundColor: "rgba(134, 239, 172, 0.1)" }}>
+            <div style={{ ...styles.messageContainer, borderColor: "rgba(0, 255, 224, 0.5)", backgroundColor: "rgba(0, 255, 224, 0.12)" }}>
               <p style={styles.successText}>{successMessage}</p>
             </div>
           )}
           {errorMessage && (
-            <div style={{ ...styles.messageContainer, borderColor: "rgba(255, 107, 107, 0.3)", backgroundColor: "rgba(255, 107, 107, 0.1)" }}>
+            <div style={{ ...styles.messageContainer, borderColor: "rgba(255, 45, 149, 0.5)", backgroundColor: "rgba(255, 45, 149, 0.12)" }}>
               <p style={styles.errorText}>{errorMessage}</p>
             </div>
           )}
@@ -237,12 +237,12 @@ export default function App() {
       <div style={styles.backdrop} />
       <div style={styles.container}>
         {successMessage && (
-          <div style={{ ...styles.messageContainer, borderColor: "rgba(134, 239, 172, 0.3)", backgroundColor: "rgba(134, 239, 172, 0.1)" }}>
+          <div style={{ ...styles.messageContainer, borderColor: "rgba(0, 255, 224, 0.5)", backgroundColor: "rgba(0, 255, 224, 0.12)" }}>
             <p style={styles.successText}>{successMessage}</p>
           </div>
         )}
         {errorMessage && (
-          <div style={{ ...styles.messageContainer, borderColor: "rgba(255, 107, 107, 0.3)", backgroundColor: "rgba(255, 107, 107, 0.1)" }}>
+          <div style={{ ...styles.messageContainer, borderColor: "rgba(255, 45, 149, 0.5)", backgroundColor: "rgba(255, 45, 149, 0.12)" }}>
             <p style={styles.errorText}>{errorMessage}</p>
           </div>
         )}
@@ -358,9 +358,8 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     padding: "24px",
-    fontFamily: '"Georgia", "Times New Roman", serif',
-    background:
-      "radial-gradient(circle at top, rgba(255, 255, 255, 0.16), transparent 35%), linear-gradient(135deg, #111111 0%, #1a1a1a 45%, #0a0a0a 100%)",
+    fontFamily: '"Rajdhani", "Segoe UI", sans-serif',
+    background: "#05070f",
     transition: "background 0.5s ease",
     position: "relative",
     overflow: "hidden",
@@ -368,15 +367,14 @@ const styles = {
   backdrop: {
     position: "absolute",
     inset: 0,
-    background:
-      "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+    background: "rgba(0, 255, 224, 0.06)",
     backgroundSize: "28px 28px",
-    opacity: 0.24,
+    opacity: 0.36,
     pointerEvents: "none",
   },
   container: {
     width: "100%",
-    maxWidth: "430px",
+    maxWidth: "480px",
     display: "flex",
     flexDirection: "column",
     gap: "16px",
@@ -390,19 +388,21 @@ const styles = {
   },
   messageContainer: {
     padding: "14px 16px",
-    borderRadius: "14px",
+    borderRadius: "12px",
     border: "1px solid",
     animation: "slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
     transition: "all 0.3s ease",
+    boxShadow: "0 0 16px rgba(0, 255, 224, 0.14)",
+    backdropFilter: "blur(2px)",
   },
   card: {
     width: "100%",
-    background:
-      "linear-gradient(180deg, rgba(249, 244, 233, 0.98) 0%, rgba(236, 229, 215, 0.96) 100%)",
-    borderRadius: "22px",
+    background: "rgba(7, 11, 30, 0.95)",
+    borderRadius: "18px",
     padding: "32px",
-    boxShadow: "0 24px 50px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.7)",
-    border: "1px solid rgba(0, 0, 0, 0.16)",
+    boxShadow:
+      "0 22px 48px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(0, 255, 224, 0.12), 0 0 28px rgba(255, 45, 149, 0.12)",
+    border: "1px solid rgba(0, 255, 224, 0.35)",
     transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
   },
   headerArea: {
@@ -417,32 +417,35 @@ const styles = {
   },
   heading: {
     margin: "0 0 8px",
-    fontSize: "2rem",
-    color: "#111111",
+    fontSize: "2.1rem",
+    color: "#f5f7ff",
     fontWeight: 700,
-    letterSpacing: "0.04em",
+    letterSpacing: "0.08em",
     textTransform: "uppercase",
     transition: "color 0.3s ease",
+    fontFamily: '"Orbitron", "Rajdhani", sans-serif',
+    textShadow: "0 0 12px rgba(0, 255, 224, 0.28)",
   },
   subHeading: {
     margin: 0,
-    color: "#49413a",
-    fontSize: "0.95rem",
-    fontWeight: 400,
+    color: "#99a4d6",
+    fontSize: "1rem",
+    fontWeight: 500,
     transition: "color 0.3s ease",
+    letterSpacing: "0.04em",
   },
   countText: {
     marginTop: "10px",
-    color: "#5a534d",
+    color: "#66ffe9",
     fontSize: "0.84rem",
-    letterSpacing: "0.03em",
+    letterSpacing: "0.1em",
     textTransform: "uppercase",
   },
   switchContainer: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
-    background: "rgba(17, 17, 17, 0.08)",
-    border: "1px solid rgba(17, 17, 17, 0.14)",
+    background: "rgba(2, 5, 20, 0.8)",
+    border: "1px solid rgba(0, 255, 224, 0.25)",
     borderRadius: "12px",
     padding: "5px",
     marginBottom: "20px",
@@ -450,21 +453,23 @@ const styles = {
     transition: "all 0.3s ease",
   },
   switchButton: {
-    border: "none",
+    border: "1px solid transparent",
     borderRadius: "10px",
     background: "transparent",
-    color: "#55504a",
-    fontWeight: 600,
+    color: "#9ea9d9",
+    fontWeight: 700,
     padding: "11px 14px",
     cursor: "pointer",
     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
     fontSize: "0.95rem",
-    letterSpacing: "0.03em",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
   },
   switchButtonActive: {
-    background: "linear-gradient(135deg, #171717 0%, #3a3a3a 100%)",
-    color: "#f8f2e8",
-    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+    background: "rgba(0, 255, 224, 0.16)",
+    color: "#f7fbff",
+    boxShadow: "0 0 18px rgba(0, 255, 224, 0.24)",
+    borderColor: "rgba(0, 255, 224, 0.6)",
   },
   form: {
     display: "grid",
@@ -473,46 +478,49 @@ const styles = {
   fieldBlock: {
     display: "grid",
     gap: "8px",
-    color: "#1d1a17",
-    fontWeight: 500,
+    color: "#d9e0ff",
+    fontWeight: 600,
     fontSize: "0.92rem",
     transition: "color 0.3s ease",
+    letterSpacing: "0.03em",
+    textTransform: "uppercase",
   },
   input: {
-    border: "1px solid rgba(17, 17, 17, 0.18)",
+    border: "1px solid rgba(0, 255, 224, 0.36)",
     borderRadius: "12px",
     padding: "12px 14px",
     fontSize: "0.95rem",
     outline: "none",
-    background: "rgba(255, 255, 255, 0.7)",
-    color: "#111111",
+    background: "rgba(4, 10, 33, 0.86)",
+    color: "#e8eeff",
     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+    fontFamily: '"Rajdhani", "Segoe UI", sans-serif',
   },
   submitButton: {
     marginTop: "8px",
     border: "none",
     borderRadius: "12px",
-    background: "linear-gradient(135deg, #161616 0%, #3d3d3d 100%)",
-    color: "#f9f4eb",
+    background: "#00f3ff",
+    color: "#070b1a",
     fontSize: "0.96rem",
     fontWeight: 700,
     padding: "13px 16px",
     cursor: "pointer",
     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.18)",
-    letterSpacing: "0.04em",
+    boxShadow: "0 0 24px rgba(0, 243, 255, 0.35)",
+    letterSpacing: "0.09em",
     textTransform: "uppercase",
   },
   secondaryButton: {
-    border: "1px solid rgba(17, 17, 17, 0.18)",
+    border: "1px solid rgba(255, 45, 149, 0.55)",
     borderRadius: "999px",
-    background: "rgba(255, 255, 255, 0.45)",
-    color: "#111111",
+    background: "rgba(255, 45, 149, 0.12)",
+    color: "#ffd2ec",
     fontSize: "0.82rem",
     fontWeight: 700,
     padding: "10px 14px",
     cursor: "pointer",
-    letterSpacing: "0.04em",
+    letterSpacing: "0.09em",
     textTransform: "uppercase",
   },
   userList: {
@@ -523,11 +531,11 @@ const styles = {
     maxHeight: "56vh",
   },
   userCard: {
-    background: "rgba(255, 255, 255, 0.6)",
-    border: "1px solid rgba(17, 17, 17, 0.14)",
+    background: "rgba(9, 16, 44, 0.9)",
+    border: "1px solid rgba(0, 255, 224, 0.24)",
     borderRadius: "16px",
     padding: "16px",
-    boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.5)",
+    boxShadow: "inset 0 1px 0 rgba(0, 255, 224, 0.08)",
   },
   userCardTop: {
     display: "flex",
@@ -539,62 +547,63 @@ const styles = {
   userName: {
     margin: 0,
     fontSize: "1.05rem",
-    color: "#111111",
-    letterSpacing: "0.03em",
+    color: "#e8eeff",
+    letterSpacing: "0.06em",
     textTransform: "uppercase",
+    fontFamily: '"Orbitron", "Rajdhani", sans-serif',
   },
   userEmail: {
     margin: "6px 0 0",
-    color: "#4f4740",
+    color: "#8edaf4",
     fontSize: "0.92rem",
     wordBreak: "break-word",
   },
   userBadge: {
     flexShrink: 0,
-    border: "1px solid rgba(17, 17, 17, 0.18)",
+    border: "1px solid rgba(255, 45, 149, 0.55)",
     borderRadius: "999px",
     padding: "6px 10px",
     fontSize: "0.78rem",
     fontWeight: 700,
     letterSpacing: "0.08em",
-    color: "#111111",
-    background: "rgba(255, 255, 255, 0.62)",
+    color: "#ffd2ec",
+    background: "rgba(255, 45, 149, 0.14)",
   },
   userMetaRow: {
     display: "flex",
     justifyContent: "space-between",
     gap: "10px",
     paddingTop: "10px",
-    borderTop: "1px dashed rgba(17, 17, 17, 0.14)",
+    borderTop: "1px dashed rgba(0, 255, 224, 0.28)",
     fontSize: "0.82rem",
   },
   userMetaLabel: {
-    color: "#5a534d",
+    color: "#6cd8f9",
     textTransform: "uppercase",
-    letterSpacing: "0.05em",
+    letterSpacing: "0.09em",
   },
   userMetaValue: {
-    color: "#111111",
+    color: "#f4f7ff",
     fontWeight: 600,
   },
   emptyState: {
     padding: "22px 16px",
     borderRadius: "14px",
-    border: "1px dashed rgba(17, 17, 17, 0.2)",
-    color: "#5a534d",
+    border: "1px dashed rgba(0, 255, 224, 0.3)",
+    color: "#8ad9f6",
     textAlign: "center",
-    background: "rgba(255, 255, 255, 0.45)",
+    background: "rgba(2, 11, 29, 0.7)",
   },
   successText: {
     margin: 0,
-    color: "#1f1f1f",
+    color: "#b7fff4",
     fontWeight: 600,
     fontSize: "0.96rem",
     transition: "color 0.3s ease",
   },
   errorText: {
     margin: 0,
-    color: "#1f1f1f",
+    color: "#ffc3e4",
     fontWeight: 600,
     fontSize: "0.96rem",
     transition: "color 0.3s ease",
@@ -602,8 +611,9 @@ const styles = {
   note: {
     marginTop: "18px",
     fontSize: "0.83rem",
-    color: "#5a534d",
+    color: "#89cde9",
     lineHeight: 1.5,
     transition: "color 0.3s ease",
+    letterSpacing: "0.03em",
   },
 };

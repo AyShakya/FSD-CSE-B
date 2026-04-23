@@ -1,32 +1,35 @@
-/* Vintage monochrome app styles with subtle motion */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap");
+
+/* Cyberpunk interaction layer */
 
 ::selection {
-  background: rgba(17, 17, 17, 0.88);
-  color: #f8f2e8;
+  background: rgba(0, 243, 255, 0.28);
+  color: #f7fbff;
 }
 
 ::-moz-selection {
-  background: rgba(17, 17, 17, 0.88);
-  color: #f8f2e8;
+  background: rgba(0, 243, 255, 0.28);
+  color: #f7fbff;
 }
 
-/* Form inputs - dark theme styling */
+/* Form inputs */
 label input {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 label input:hover {
-  border-color: rgba(17, 17, 17, 0.35);
-  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(0, 255, 224, 0.7);
+  background: rgba(8, 18, 49, 0.95);
+  box-shadow: 0 0 12px rgba(0, 255, 224, 0.22);
 }
 
 label input:focus {
-  border-color: rgba(17, 17, 17, 0.58);
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08), 0 0 0 3px rgba(17, 17, 17, 0.08);
+  border-color: rgba(0, 255, 224, 0.9);
+  background: rgba(8, 18, 49, 1);
+  box-shadow: 0 0 0 3px rgba(0, 255, 224, 0.2), 0 0 18px rgba(0, 255, 224, 0.25);
 }
 
-/* Switch buttons - enhanced transitions */
+/* Buttons */
 button[type="button"] {
   position: relative;
   overflow: hidden;
@@ -40,7 +43,7 @@ button[type="button"]::before {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(17, 17, 17, 0.08);
+  background: rgba(0, 255, 224, 0.17);
   transform: translate(-50%, -50%);
   transition: width 0.5s ease, height 0.5s ease;
 }
@@ -50,7 +53,6 @@ button[type="button"]:active::before {
   height: 100px;
 }
 
-/* Submit button enhanced styles */
 button[type="submit"] {
   position: relative;
   overflow: hidden;
@@ -59,7 +61,8 @@ button[type="submit"] {
 
 button[type="submit"]:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 8px 22px rgba(0, 243, 255, 0.45);
+  filter: saturate(1.2);
 }
 
 button[type="submit"]:active:not(:disabled) {
@@ -71,21 +74,18 @@ button[type="submit"]:disabled {
   cursor: not-allowed;
 }
 
-/* Success and error messages animations */
 p[style*="color: rgb"] {
   animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Smooth paragraph transitions */
 p {
   transition: all 0.3s ease;
 }
 
-/* Form field styling */
 label {
   transition: color 0.3s ease;
 }
 
 label:focus-within {
-  color: #111111;
+  color: #cffff8;
 }
